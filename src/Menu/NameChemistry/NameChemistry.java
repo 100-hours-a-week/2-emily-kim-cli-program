@@ -67,13 +67,13 @@ public class NameChemistry extends Menu{
         }
 
         //글자별 획순 계산
-        for(int i=0;i<name[1].length();i++) {
+        for(int i=0;i<name[2].length();i++) {
             nameList[i*2] = CalculateNum(String.valueOf(name[1].charAt(i)));
             nameList[i*2+1] = CalculateNum(String.valueOf(name[2].charAt(i)));
         }
-        int lastIdx=name[1].length()*2;
-        for(int i=name[1].length();i<name[2].length();i++){
-            nameList[lastIdx++]=CalculateNum(String.valueOf(name[2].charAt(i)));
+        int lastIdx=name[2].length()*2;
+        for(int i=name[2].length();i<name[1].length();i++){
+            nameList[lastIdx++]=CalculateNum(String.valueOf(name[1].charAt(i)));
         }
 
         //더하기 계산

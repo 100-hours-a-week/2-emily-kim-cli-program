@@ -1,7 +1,6 @@
 import member.Login;
 import member.Member;
 
-import java.util.Scanner;
 
 public class WelcomeView {
     Login login;

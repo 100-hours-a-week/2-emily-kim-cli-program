@@ -21,6 +21,5 @@ public class Taroro {
             menu.GoTo();
         }
         System.out.println("   안녕히 가세요 "+customer.getName()+"님");
-        System.out.println("---------------------------------------");
     }
 }
