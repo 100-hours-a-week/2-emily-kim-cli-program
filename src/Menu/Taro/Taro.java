@@ -1,8 +1,8 @@
 package Menu.Taro;
 import CardDeck.CardDeck;
 import Menu.Menu;
-import member.Member;
-import member.NonRegistered;
+import Member.Member;
+import Member.NonRegistered;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -52,7 +52,7 @@ public class Taro extends Menu {
         switch (this.taroChoose){
             case 1:
                 TaroToday taroToday =new TaroToday();
-                if(isNonRegistered()){
+                if(customer==null){
                     nonRegistered.Charge(taroToday.price);
                 }
                 else{
@@ -62,7 +62,7 @@ public class Taro extends Menu {
                 break;
             case 2:
                 TaroHealth taroHealth =new TaroHealth();
-                if(isNonRegistered()){
+                if(customer==null){
                     nonRegistered.Charge(taroHealth.price);
                 }
                 else{
@@ -72,7 +72,7 @@ public class Taro extends Menu {
                 break;
             case 3:
                 TaroLove taroLove =new TaroLove();
-                if(isNonRegistered()){
+                if(customer==null){
                     nonRegistered.Charge(taroLove.price);
                 }
                 else{
@@ -90,7 +90,7 @@ public class Taro extends Menu {
 
 
     public void PickCard(){
-        System.out.println("  *.! 0에서 21까지 중 숫자를 골라보세요 ..*!  ");
+        System.out.println("    *.! 0에서 21까지 중 숫자를 골라보세요 ..*!    ");
         System.out.print(">> ");
         int cardChoose=sc.nextInt();
         if(cardChoose<0 || cardChoose>21){

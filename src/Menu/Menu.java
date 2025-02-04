@@ -3,8 +3,8 @@ package Menu;
 import Menu.ChargeCredit.ChargeCredit;
 import Menu.NameChemistry.NameChemistry;
 import Menu.Taro.Taro;
-import member.Member;
-import member.NonRegistered;
+import Member.Member;
+import Member.NonRegistered;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;

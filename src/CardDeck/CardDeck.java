@@ -15,15 +15,15 @@ public class CardDeck {
         switch(type){
             case "today":
                 cardSc = new Scanner(new File("src/CardDeck/todaycard.txt"));
-                this.TodayCard();
+                this.setCard();
                 break;
             case "health":
                 cardSc = new Scanner(new File("src/CardDeck/healthcard.txt"));
-                this.TodayCard();
+                this.setCard();
                 break;
             case "love":
                 cardSc = new Scanner(new File("src/CardDeck/lovecard.txt"));
-                this.TodayCard();
+                this.setCard();
                 break;
             default:
                 break;
@@ -33,12 +33,7 @@ public class CardDeck {
     public Card getCard(int idx) {
         return card[idx];
     }
-
-    public void setCard(Card[] card) {
-        this.card = card;
-    }
-
-    public void TodayCard(){
+    public void setCard(){
         int idx=0;
         while (cardSc.hasNextLine()){
             String num=cardSc.nextLine();

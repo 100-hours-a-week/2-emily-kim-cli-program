@@ -21,32 +21,16 @@ public class Card {
         return num;
     }
 
-    public void setNum(int num) {
-        this.num = num;
-    }
-
     public String getCardNameKor() {
         return cardNameKor;
-    }
-
-    public void setCardNameKor(String cardNameKor) {
-        this.cardNameKor = cardNameKor;
     }
 
     public String getCardNameEng() {
         return cardNameEng;
     }
 
-    public void setCardNameEng(String cardNameEng) {
-        this.cardNameEng = cardNameEng;
-    }
-
     public String getCardText() {
         return cardText;
-    }
-
-    public void setCardText(String cardText) {
-        this.cardText = cardText;
     }
 
     public String getLuckyCharm() {

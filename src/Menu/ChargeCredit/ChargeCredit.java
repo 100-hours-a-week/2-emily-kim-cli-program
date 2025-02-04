@@ -1,6 +1,6 @@
 package Menu.ChargeCredit;
 
-import member.Member;
+import Member.Member;
 
 import java.util.Scanner;
 

@@ -1,5 +1,5 @@
 import Menu.Menu;
-import member.Member;
+import Member.Member;
 
 import java.io.FileNotFoundException;
 

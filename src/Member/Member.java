@@ -1,4 +1,4 @@
-package member;
+package Member;
 
 import Menu.ChargeCredit.ChargeCredit;
 
@@ -25,9 +25,6 @@ public class Member {
         return true;
     }
 
-    public String getEmail(){
-        return this.email;
-    }
     public boolean setEmail(String email) {
         if(!email.contains("@") || !email.contains(".com")){
             return false;
@@ -36,9 +33,6 @@ public class Member {
         return true;
     }
 
-    public LocalDate getBirthday(){
-        return this.birthday;
-    }
     public boolean setBirthday(int birthdayInt) {
         LocalDate today=LocalDate.now();
         int year=birthdayInt/10000;
@@ -76,9 +70,6 @@ public class Member {
         return this.birthday.getDayOfMonth();
     }
 
-    public int getAge() {
-        return this.age;
-    }
     public void setAge() {
         LocalDate today=LocalDate.now();
         int age;
@@ -117,20 +108,11 @@ public class Member {
         }
     }
 
-    public int getVisited() {
-        return visited;
-    }
     public void setVisited(int visited) {
         this.visited = visited;
     }
 
-    public String getType() {
-        return type;
-    }
     public void setType(String type) {
         this.type = type;
-    }
-    public boolean isNonRegistered(){
-        return getType().equals("nonregistered");
     }
 }

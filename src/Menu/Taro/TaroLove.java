@@ -13,14 +13,14 @@ public class TaroLove extends Taro{
         cardDeck=new CardDeck("love");
     }
     public void WelcomeLove() throws InterruptedException, FileNotFoundException {
-        System.out.println("---------------------------------------");
-        System.out.println("        * ~.\"  *'~  *.'  -.*          ");
+        System.out.println("-------------------------------------------");
+        System.out.println("          * ~.\"  *'~  *.'  -.*            ");
         this.PrepareCard();
         this.PickCard();
         this.CalculateResult();
         this.Loading();
         this.PrintLove();
-        System.out.println("        * ~.\"  *'~  *.'  -.*          ");
+        System.out.println("          * ~.\"  *'~  *.'  -.*            ");
     }
     public void PrepareCard() throws FileNotFoundException {
         cardDeck=new CardDeck("love");
