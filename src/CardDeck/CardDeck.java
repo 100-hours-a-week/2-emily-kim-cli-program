@@ -16,10 +16,16 @@ public class CardDeck {
         this.type=type;
         switch(type){
             case "today":
-                cardSc = new Scanner(new File("/Users/emily/IdeaProjects/CLI program/src/CardDeck/todaycard.txt"));
+                cardSc = new Scanner(new File("src/CardDeck/todaycard.txt"));
                 this.TodayCard();
                 break;
-            case "flower":
+            case "health":
+                cardSc = new Scanner(new File("src/CardDeck/healthcard.txt"));
+                this.TodayCard();
+                break;
+            case "love":
+                cardSc = new Scanner(new File("src/CardDeck/lovecard.txt"));
+                this.TodayCard();
                 break;
             default:
                 break;
