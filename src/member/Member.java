@@ -40,8 +40,9 @@ public class Member {
         return this.birthday;
     }
     public boolean setBirthday(int birthdayInt) {
+        LocalDate today=LocalDate.now();
         int year=birthdayInt/10000;
-        if(year>2025 || year<1900){
+        if(year>today.getYear() || year<1900){
             return false;
         }
         int month=(birthdayInt/100)%100;
@@ -51,6 +52,16 @@ public class Member {
         int date=birthdayInt%100;
         if(date>31 || date<1){
             return false;
+        }
+        if(year== today.getYear()) {
+            if (month > today.getMonthValue()) {
+                return false;
+            }
+            else if(month== today.getMonthValue()){
+                if(date>today.getDayOfMonth()){
+                    return false;
+                }
+            }
         }
         this.birthday = LocalDate.of(year,month,date);
         return true;
