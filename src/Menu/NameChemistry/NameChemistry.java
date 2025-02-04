@@ -23,9 +23,9 @@ public class NameChemistry extends Menu{
     }
 
     public void WelcomeNameChemistry() throws InterruptedException {
-        System.out.println("---------------------------------------");
-        System.out.println("      *.! 이름 궁합을 보고 싶나요? ..*!      ");
-        System.out.println("         * ~.\"  *'~  *.'  -.*         ");
+        System.out.println("-------------------------------------------");
+        System.out.println("        *.! 이름 궁합을 보고 싶나요? ..*!        ");
+        System.out.println("           * ~.\"  *'~  *.'  -.*           ");
         System.out.println();
         this.PickName(1);
         this.PickName(2);

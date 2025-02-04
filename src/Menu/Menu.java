@@ -24,9 +24,9 @@ public class Menu {
         this.customer=customer;
     }
     public int PrintMenu() {
-        System.out.println("---------------------------------------");
-        System.out.println("        *.!  Taroro Taro  ..*!         ");
-        System.out.println("         * ~.\"  *'~  *.' -.*          ");
+        System.out.println("-------------------------------------------");
+        System.out.println("          *.!  Taroro Taro  ..*!           ");
+        System.out.println("           * ~.\"  *'~  *.' -.*            ");
         System.out.println();
         System.out.println("*'~  1. 타로점 보기\t\t\t  2000-4000 크레딧");
         System.out.println("*'~  2. 이름 궁합 보기\t\t\t  3000 크레딧");
@@ -104,8 +104,8 @@ public class Menu {
     }
 
     public void PrintMessage(String message) {
-        System.out.println("        * ~.\"  *'~  *.'  -.*          ");
-        System.out.println("      *.! " + message + " ..*!     ");
+        System.out.println("          * ~.\"  *'~  *.'  -.*            ");
+        System.out.println("        *.! " + message + " ..*!           ");
     }
     public void WaitABit() throws InterruptedException {
         System.out.println();

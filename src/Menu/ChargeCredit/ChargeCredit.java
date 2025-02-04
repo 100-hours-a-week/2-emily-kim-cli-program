@@ -14,10 +14,10 @@ public class ChargeCredit {
     }
 
     public void WelcomeChargeCredit(){
-        System.out.println("---------------------------------------");
-        System.out.println("     *.!  회원권 충전페이지 입니다  ..*!      ");
-        System.out.println("            (1크레딧 = 1원)               ");
-        System.out.println("         * ~.\"  *'~  *.' -.*          ");
+        System.out.println("-------------------------------------------");
+        System.out.println("       *.!  회원권 충전페이지 입니다  ..*!        ");
+        System.out.println("              (1크레딧 = 1원)                 ");
+        System.out.println("           * ~.\"  *'~  *.' -.*            ");
         System.out.println();
         System.out.println("*'~  1. 회원권 충전");
         System.out.println("*'~  2. 회원권 금액 조회");

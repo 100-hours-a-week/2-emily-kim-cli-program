@@ -23,16 +23,16 @@ public class Taro extends Menu {
         this.customer=customer;
     }
     public int WelcomeTaro(){
-        System.out.println("---------------------------------------");
-        System.out.println("        *.! It's Taro Time..*!         ");
-        System.out.println("        * ~.\"  *'~  *.'  -.*          ");
+        System.out.println("-------------------------------------------");
+        System.out.println("          *.! It's Taro Time..*!           ");
+        System.out.println("          * ~.\"  *'~  *.'  -.*            ");
         System.out.println();
         return this.PickTaro();
     }
 
     public int PickTaro(){
-        System.out.println("---------------------------------------");
-        System.out.println("     *.! 원하시는 타로를 골라보세요 ..*!      ");
+        System.out.println("-------------------------------------------");
+        System.out.println("       *.! 원하시는 타로를 골라보세요 ..*!        ");
         System.out.println("*'~  1. 오늘의 타로\t\t\t 2000");
         System.out.println("*'~  2. 건강의 타로\t\t\t 3000");
         System.out.println("*'~  3. 사랑의 타로\t\t\t 4000");
@@ -102,7 +102,7 @@ public class Taro extends Menu {
     }
 
     public void PrintMessage(){
-        System.out.println("        * ~.\"  *'~  *.'  -.*          ");
-        System.out.println("      *.! 당신의 결과를 확인하세요! ..*!     ");
+        System.out.println("          * ~.\"  *'~  *.'  -.*            ");
+        System.out.println("        *.! 당신의 결과를 확인하세요! ..*!       ");
     }
 }

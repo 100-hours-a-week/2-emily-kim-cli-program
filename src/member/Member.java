@@ -94,7 +94,7 @@ public class Member {
     public boolean UpdateBalance(int price){
         if(this.balance>=price){
             this.balance -= price;
-            System.out.println("---------------------------------------");
+            System.out.println("-------------------------------------------");
             System.out.println("   회원권 잔액은 " + this.balance +"크레딧 입니다.");
             return true;
         }
