@@ -15,7 +15,7 @@ public class NameChemistry extends Menu{
 
     public NameChemistry(){
         name[0]="";
-        price=2000;
+        price=3000;
     }
 
     public int getPrice() {
@@ -46,6 +46,7 @@ public class NameChemistry extends Menu{
         if(!isValid(name)){
             System.out.println("   잘못된 형식 입니다. 다시 입력해주세요.");
             this.PickName(idx);
+            return;
         }
         this.name[idx]=name;
     }

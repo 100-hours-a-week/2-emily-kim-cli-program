@@ -9,7 +9,6 @@ public class ChargeCredit {
 
     Member customer;
     int pickNum=0;
-    public ChargeCredit(){}
     public ChargeCredit(Member customer){
         this.customer=customer;
     }
@@ -26,7 +25,7 @@ public class ChargeCredit {
         while(pickNum!=3){
             this.PickNum();
             this.GoTo();
-        };
+        }
 
     }
 

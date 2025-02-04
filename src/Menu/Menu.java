@@ -18,8 +18,8 @@ public class Menu {
     NameChemistry nameChemistry;
     ChargeCredit chargeCredit;
     int pickNum;
-    public Menu(){}
 
+    public Menu(){}
     public Menu(Member customer){
         this.customer=customer;
     }
@@ -45,29 +45,39 @@ public class Menu {
                 }
                 break;
             case 2:
-                nameChemistry=new NameChemistry();
-                if(customer.isNonRegistered()){
-                    ((NonRegistered)customer).Charge(nameChemistry.getPrice());
-                }
-                else{
-                    while(!customer.UpdateBalance(nameChemistry.getPrice()));
-                }
-                nameChemistry.WelcomeNameChemistry();
+                this.GoNameChemistry();
                 break;
             case 3:
-                chargeCredit=new ChargeCredit(customer);
-                if(customer.getType()=="nonregistered") {
-                    ((NonRegistered)customer).ChargingError();
-                }
-                else{
-                    chargeCredit.WelcomeChargeCredit();
-                }
+                this.GoChargeCredit();
                 break;
             case 4:
                 System.out.println("안녕히 가세요!");
                 break;
             default:
                 break;
+        }
+    }
+    public void GoNameChemistry() throws InterruptedException {
+        NonRegistered nonRegistered=new NonRegistered();
+
+        nameChemistry=new NameChemistry();
+        if(isNonRegistered()){
+            nonRegistered.Charge(nameChemistry.getPrice());
+        }
+        else{
+            while(!customer.UpdateBalance(nameChemistry.getPrice()));
+        }
+        nameChemistry.WelcomeNameChemistry();
+    }
+    public void GoChargeCredit(){
+        NonRegistered nonRegistered=new NonRegistered();
+
+        chargeCredit=new ChargeCredit(customer);
+        if(isNonRegistered()) {
+            nonRegistered.ChargingError();
+        }
+        else{
+            chargeCredit.WelcomeChargeCredit();
         }
     }
 
@@ -100,5 +110,9 @@ public class Menu {
     public void WaitABit() throws InterruptedException {
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(1000);
+    }
+
+    public Boolean isNonRegistered(){
+        return customer == null;
     }
 }

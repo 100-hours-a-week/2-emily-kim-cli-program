@@ -1,7 +1,5 @@
 package member;
 
-import member.Newbie;
-
 import java.util.Scanner;
 
 public class Login {
@@ -56,8 +54,9 @@ public class Login {
                 this.AskVisited();
                 return true;
             case "n":
+                NonRegistered nonRegistered=new NonRegistered();
                 customer.setType("nonregistered");
-                ((NonRegistered) customer).PrintNotification();
+               nonRegistered.PrintNotification();
                 return false;
             default:
                 System.out.println("   대답은 y, n로 해주세요. 다시 한 번 대답해주세요.");

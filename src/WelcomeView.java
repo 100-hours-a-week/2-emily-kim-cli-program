@@ -4,7 +4,6 @@ import member.Member;
 import java.util.Scanner;
 
 public class WelcomeView {
-    Scanner sc=new Scanner(System.in);
     Login login;
 
     public WelcomeView(){

@@ -7,13 +7,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class TaroHealth extends Taro{
-    Scanner sc=new Scanner(System.in);
 
     public TaroHealth() throws FileNotFoundException {
         this.lucky=6;
         this.price=3000;
         cardDeck=new CardDeck("health");
-    };
+    }
     public void WelcomeHealth() throws InterruptedException, FileNotFoundException {
         System.out.println("---------------------------------------");
         System.out.println("        * ~.\"  *'~  *.'  -.*          ");

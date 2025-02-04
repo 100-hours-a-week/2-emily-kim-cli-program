@@ -5,10 +5,8 @@ import CardDeck.CardDeck;
 import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class TaroLove extends Taro{
-    Scanner sc=new Scanner(System.in);
 
     public TaroLove() throws FileNotFoundException {
         this.lucky=12;
@@ -40,7 +38,7 @@ public class TaroLove extends Taro{
         System.out.println("  * " + cardDeck.getCard(this.finalCardIdx).getCardNameEng());
         System.out.println("  * " + cardDeck.getCard(this.finalCardIdx).getCardNameKor());
         System.out.println("  * " + cardDeck.getCard(this.finalCardIdx).getCardText());
-        System.out.println("  * 오늘의 OOTD는 " + cardDeck.getCard(this.finalCardIdx).getLuckyCharm() + "어때요?");
+        System.out.println("  * 오늘의 OOTD는 " + cardDeck.getCard(this.finalCardIdx).getLuckyCharm() + " 어때요?");
         this.WaitABit();
     }
 

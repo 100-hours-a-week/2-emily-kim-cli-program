@@ -6,7 +6,6 @@ import member.NonRegistered;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class Taro extends Menu {
     Scanner sc=new Scanner(System.in);
@@ -49,11 +48,12 @@ public class Taro extends Menu {
         return taroChoose;
     }
     public void GoTo() throws FileNotFoundException, InterruptedException {
+        NonRegistered nonRegistered=new NonRegistered();
         switch (this.taroChoose){
             case 1:
                 TaroToday taroToday =new TaroToday();
-                if(customer.isNonRegistered()){
-                    ((NonRegistered)customer).Charge(taroToday.price);
+                if(isNonRegistered()){
+                    nonRegistered.Charge(taroToday.price);
                 }
                 else{
                     while(!customer.UpdateBalance(taroToday.price));
@@ -62,8 +62,8 @@ public class Taro extends Menu {
                 break;
             case 2:
                 TaroHealth taroHealth =new TaroHealth();
-                if(customer.isNonRegistered()){
-                    ((NonRegistered)customer).Charge(taroHealth.price);
+                if(isNonRegistered()){
+                    nonRegistered.Charge(taroHealth.price);
                 }
                 else{
                     while(!customer.UpdateBalance(taroHealth.price));
@@ -72,8 +72,8 @@ public class Taro extends Menu {
                 break;
             case 3:
                 TaroLove taroLove =new TaroLove();
-                if(customer.isNonRegistered()){
-                    ((NonRegistered)customer).Charge(taroLove.price);
+                if(isNonRegistered()){
+                    nonRegistered.Charge(taroLove.price);
                 }
                 else{
                     while(!customer.UpdateBalance(taroLove.price));

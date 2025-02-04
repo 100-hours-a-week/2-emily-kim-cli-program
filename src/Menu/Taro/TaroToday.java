@@ -5,10 +5,8 @@ import CardDeck.CardDeck;
 import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class TaroToday extends Taro{
-    Scanner sc=new Scanner(System.in);
 
     public TaroToday() throws FileNotFoundException {
         this.lucky=1;

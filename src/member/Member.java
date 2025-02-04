@@ -120,6 +120,6 @@ public class Member {
         this.type = type;
     }
     public boolean isNonRegistered(){
-        return getType()=="nonregistered";
+        return getType().equals("nonregistered");
     }
 }
