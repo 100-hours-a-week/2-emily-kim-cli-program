@@ -12,6 +12,7 @@ public class TaroLove extends Taro{
 
     public TaroLove() throws FileNotFoundException {
         this.lucky=12;
+        this.price=4000;
         cardDeck=new CardDeck("love");
     }
     public void WelcomeLove() throws InterruptedException, FileNotFoundException {
@@ -39,7 +40,7 @@ public class TaroLove extends Taro{
         System.out.println("  * " + cardDeck.getCard(this.finalCardIdx).getCardNameEng());
         System.out.println("  * " + cardDeck.getCard(this.finalCardIdx).getCardNameKor());
         System.out.println("  * " + cardDeck.getCard(this.finalCardIdx).getCardText());
-        System.out.println("  * 오늘의 OOTD는" + cardDeck.getCard(this.finalCardIdx).getLuckyCharm() + "어때요?");
+        System.out.println("  * 오늘의 OOTD는 " + cardDeck.getCard(this.finalCardIdx).getLuckyCharm() + "어때요?");
         this.WaitABit();
     }
 

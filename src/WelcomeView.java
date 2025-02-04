@@ -1,10 +1,15 @@
+import member.Login;
+import member.Member;
+
 import java.util.Scanner;
 
 public class WelcomeView {
     Scanner sc=new Scanner(System.in);
     Login login;
 
-    public WelcomeView(){}
+    public WelcomeView(){
+        login = new Login();
+    }
     public void PrintWelcome(){
         System.out.println("---------------------------------------");
         System.out.println("      *.! Welcome to Taroro ..*!       ");
@@ -13,11 +18,12 @@ public class WelcomeView {
         System.out.println("---------------------------------------");
     }
 
-    public void LoginStart(){
-        login = new Login();
+    public Boolean AskMemberInfo() {
+        return login.AskMemberInfo();
+    }
+    public Member Login(){
         login.AskPersonalInfo();
-        login.AskMemberInfo();
-
+        return login.getCustomer();
     }
 
 

@@ -1,5 +1,7 @@
 package member;
 
+import Menu.ChargeCredit.ChargeCredit;
+
 import java.time.LocalDate;
 
 public class Member {
@@ -9,7 +11,7 @@ public class Member {
     int age;
     int balance;
     int visited;
-
+    String type;
 
     //생성자
     public Member(){}
@@ -89,11 +91,35 @@ public class Member {
     public void setBalance(int balance) {
         this.balance = balance;
     }
+    public boolean UpdateBalance(int price){
+        if(this.balance>=price){
+            this.balance -= price;
+            System.out.println("---------------------------------------");
+            System.out.println("   회원권 잔액은 " + this.balance +"크레딧 입니다.");
+            return true;
+        }
+        else {
+            System.out.println("   회원권 금액이 부족합니다. 회원권을 충전하세요");
+            ChargeCredit chargeCredit=new ChargeCredit(this);
+            chargeCredit.Charge();
+            return false;
+        }
+    }
 
     public int getVisited() {
         return visited;
     }
     public void setVisited(int visited) {
         this.visited = visited;
+    }
+
+    public String getType() {
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
+    public boolean isNonRegistered(){
+        return getType()=="nonregistered";
     }
 }

@@ -11,9 +11,15 @@ public class NameChemistry extends Menu{
 
     String[] name=new String[3];
     int value=0;
+    int price;
 
     public NameChemistry(){
         name[0]="";
+        price=2000;
+    }
+
+    public int getPrice() {
+        return price;
     }
 
     public void WelcomeNameChemistry() throws InterruptedException {
