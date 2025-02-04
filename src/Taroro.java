@@ -8,14 +8,14 @@ public class Taroro {
     static Menu menu;
     static Member customer;
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
-        welcomeView = new WelcomeView();
-
-        welcomeView.PrintWelcome();
-        welcomeView.LoginStart();
+//        welcomeView = new WelcomeView();
+//
+//        welcomeView.PrintWelcome();
+//        welcomeView.LoginStart();
 
         menu = new Menu();
         while(menu.PrintMenu()!=4){
             menu.GoTo();
-        };
+        }
     }
 }

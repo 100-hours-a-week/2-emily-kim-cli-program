@@ -24,7 +24,7 @@ public class CardDeck {
             default:
                 break;
         }
-    };
+    }
 
     public Card getCard(int idx) {
         return card[idx];

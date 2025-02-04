@@ -13,7 +13,7 @@ public class TaroLove extends Taro{
     public TaroLove() throws FileNotFoundException {
         this.lucky=12;
         cardDeck=new CardDeck("love");
-    };
+    }
     public void WelcomeLove() throws InterruptedException, FileNotFoundException {
         System.out.println("---------------------------------------");
         System.out.println("        * ~.\"  *'~  *.'  -.*          ");

@@ -2,6 +2,7 @@ package Menu;
 
 import Menu.NameChemistry.NameChemistry;
 import Menu.Taro.Taro;
+import member.Member;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -10,8 +11,8 @@ import java.util.concurrent.TimeUnit;
 public class Menu {
     Scanner sc=new Scanner(System.in);
 
-    Taro taro=new Taro();
-    NameChemistry nameChemistry=new NameChemistry();
+    Taro taro;
+    NameChemistry nameChemistry;
     int pickNum;
 
     public Menu(){}
@@ -32,11 +33,13 @@ public class Menu {
     public void GoTo() throws FileNotFoundException, InterruptedException {
         switch (this.pickNum){
             case 1:
+                taro = new Taro();
                 while(taro.WelcomeTaro()!=4){
                     taro.GoTo();
-                };
+                }
                 break;
             case 2:
+                nameChemistry=new NameChemistry();
                 nameChemistry.WelcomeNameChemistry();
                 break;
             case 3:
@@ -54,9 +57,9 @@ public class Menu {
         if(num<1|| num>4) {
             System.out.println("   잘못된 번호 입니다. 다시 입력해주세요.");
             this.PickNum();
+            return;
         }
         this.pickNum=num;
-        System.out.println("---------------------------------------");
     }
 
     public void Loading() throws InterruptedException {

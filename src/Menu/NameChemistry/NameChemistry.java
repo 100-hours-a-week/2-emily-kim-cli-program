@@ -6,10 +6,9 @@ import java.text.Normalizer;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class NameChemistry extends Menu {
+public class NameChemistry extends Menu{
     Scanner sc=new Scanner(System.in);
 
-    int nameNum;
     String[] name=new String[3];
     int value=0;
 
@@ -27,7 +26,6 @@ public class NameChemistry extends Menu {
         this.CalculateResult();
         this.Loading();
         this.PrintNameChemistry();
-        //System.out.println("---------------------------------------");
     }
 
     public boolean isValid(String name){
@@ -99,7 +97,7 @@ public class NameChemistry extends Menu {
                 num += batchim[hangeulIdx - 4520];
             }
             else {
-                num += -1;
+                num -= 1;
             }
         }
         return num;

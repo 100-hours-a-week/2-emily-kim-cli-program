@@ -22,7 +22,6 @@ public class Taro extends Menu {
         System.out.println("        * ~.\"  *'~  *.'  -.*          ");
         System.out.println();
         return this.PickTaro();
-        //System.out.println("---------------------------------------");
     }
 
     public int PickTaro(){
@@ -36,8 +35,7 @@ public class Taro extends Menu {
         int taroChoose=sc.nextInt();
         if(taroChoose<1 || taroChoose>4){
             System.out.println("   잘못된 타로 번호 입니다. 다시 입력해주세요.");
-            this.PickTaro();
-            return -1;
+            return this.PickTaro();
         }
         this.taroChoose=taroChoose;
 

@@ -1,7 +1,7 @@
 package member;
 
 public class NonRegistered extends Member {
-    public NonRegistered(){};
+    public NonRegistered(){}
 
     public void PrintNotification(){
         System.out.println("---------------------------------------");
