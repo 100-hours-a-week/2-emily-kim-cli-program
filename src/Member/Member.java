@@ -34,30 +34,42 @@ public class Member {
     }
 
     public boolean setBirthday(int birthdayInt) {
-        LocalDate today=LocalDate.now();
-        int year=birthdayInt/10000;
-        if(year>today.getYear() || year<1900){
+        LocalDate today = LocalDate.now();
+        int year = birthdayInt / 10000;
+        int month = (birthdayInt / 100) % 100;
+        int date = birthdayInt % 100;
+
+        if (!isValidDate(year, month, date, today)) {
             return false;
         }
-        int month=(birthdayInt/100)%100;
-        if(month>12 || month<1){
+
+        this.birthday = LocalDate.of(year, month, date);
+        return true;
+    }
+
+    private boolean isValidDate(int year, int month, int date, LocalDate today) {
+        if (year > today.getYear() || year < 1900) {
             return false;
         }
-        int date=birthdayInt%100;
-        if(date>31 || date<1){
+        if (month > 12 || month < 1) {
             return false;
         }
-        if(year== today.getYear()) {
+        if (date > 31 || date < 1) {
+            return false;
+        }
+        if (year == today.getYear()) {
             if (month > today.getMonthValue()) {
                 return false;
-            }
-            else if(month== today.getMonthValue()){
-                if(date>today.getDayOfMonth()){
-                    return false;
+            } else if (month == today.getMonthValue()) {
+                if (date > today.getDayOfMonth()) {
+                    if (year == today.getYear()) {
+                        if (month > today.getMonthValue()) {
+                            return false;
+                        }
+                    }
                 }
             }
         }
-        this.birthday = LocalDate.of(year,month,date);
         return true;
     }
     public int getYear(){
@@ -104,6 +116,9 @@ public class Member {
             System.out.println("   회원권 금액이 부족합니다. 회원권을 충전하세요");
             ChargeCredit chargeCredit=new ChargeCredit(this);
             chargeCredit.Charge();
+            //회원권 충전 후 축하메세지 출력
+            //print congrats meesage after charging credits
+
             return false;
         }
     }
