@@ -23,32 +23,32 @@
 ## 파일 구조도
 
 ---
-<img src="./TaroroFileStructure.png" width="250" height=""/>
+<img src="img/TaroroFileStructure.png" width="250" height=""/>
 
 ## 메인 화면
 
 ---
-<img src="./TaroroMain.png" />
+<img src="img/TaroroMain.png" />
 
 ## 주요 기능
 
 ---
 ### 회원 정보 등록
-<img src="./TaroroMemberRegister.png" />
+<img src="img/TaroroMemberRegister.png" />
 
 ### 타로점 보기
-<img src="./TaroroTaro.png" />
+<img src="img/TaroroTaro.png" />
 
 ### 이름 궁합 보기
-<img src="./TaroroNameChemistry.png" />
+<img src="img/TaroroNameChemistry.png" />
 
 ### 회원권 충전
-<img src="./TaroroChargeCredit.png" />
+<img src="img/TaroroChargeCredit.png" />
 
 ## 클래스 다이어그램
 
 ---
-![클래스 다이어그램](./TaroroClassDiagram.png)
+![클래스 다이어그램](img/TaroroClassDiagram.png)
 
 
 
