@@ -62,11 +62,7 @@ public class Member {
                 return false;
             } else if (month == today.getMonthValue()) {
                 if (date > today.getDayOfMonth()) {
-                    if (year == today.getYear()) {
-                        if (month > today.getMonthValue()) {
-                            return false;
-                        }
-                    }
+                    return false;
                 }
             }
         }
@@ -129,5 +125,8 @@ public class Member {
 
     public void setType(String type) {
         this.type = type;
+    }
+    public String getType() {
+        return this.type;
     }
 }

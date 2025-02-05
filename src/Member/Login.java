@@ -85,4 +85,18 @@ public class Login {
             newbie.PrintNotification();
         }
     }
+
+    public void Logout() {
+        if(!customer.getType().equals("nonregistered")){
+            System.out.println("   안녕히 가세요 "+customer.getName()+"님.");
+            if(customer.getType().equals("vip")){
+                System.out.println("   다음에 또 뵙겠습니다.");
+            }
+        }
+        else{
+            System.out.println("   안녕히 가세요.");
+        }
+        System.out.println("          * ~.\"  *'~  *.'  -.*            ");
+        System.out.println("-------------------------------------------");
+    }
 }

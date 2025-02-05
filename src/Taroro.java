@@ -20,6 +20,6 @@ public class Taroro {
         while(menu.PrintMenu()!=4){
             menu.GoTo();
         }
-        System.out.println("   안녕히 가세요 "+customer.getName()+"님");
+        welcomeView.Logout();
     }
 }
