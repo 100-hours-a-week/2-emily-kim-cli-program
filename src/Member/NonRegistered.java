@@ -24,6 +24,10 @@ public class NonRegistered extends Member {
             System.out.println("   잘못된 입력입니다.");
             this.Charge(price);
         }
+        else if(input > price){
+            System.out.println("   거스름돈을 받으세요.\t" + (input-price) +"원");
+        }
+
         else if(input < price){
             System.out.println("   돈이 더 필요합니다! ");
             this.Charge(price-input);
