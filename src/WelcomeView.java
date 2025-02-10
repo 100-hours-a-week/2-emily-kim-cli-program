@@ -4,9 +4,17 @@ import Member.Member;
 
 public class WelcomeView {
     Login login;
+    Music music;
 
     public WelcomeView(){
         login = new Login();
+        try {
+            music = new Music();
+            music.start();
+            //music.join();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
     public void PrintWelcome(){
         System.out.println("-------------------------------------------");
@@ -32,6 +40,7 @@ public class WelcomeView {
     }
     public void Logout(){
         login.Logout();
+        music.interrupt();
     }
 
 }
