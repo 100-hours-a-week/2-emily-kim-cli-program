@@ -87,6 +87,7 @@ public class Login {
     }
 
     public void Logout() {
+        System.out.println("-------------------------------------------");
         if(!customer.getType().equals("nonregistered")){
             System.out.println("   안녕히 가세요 "+customer.getName()+"님.");
             if(customer.getType().equals("vip")){
@@ -96,7 +97,7 @@ public class Login {
         else{
             System.out.println("   안녕히 가세요.");
         }
-        System.out.println("          * ~.\"  *'~  *.'  -.*            ");
+        System.out.println("* ~.\"  *'~  *.'  -.* * ~.\"  *'~  *.'_ -.*");
         System.out.println("-------------------------------------------");
     }
 }

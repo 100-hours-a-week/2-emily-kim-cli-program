@@ -17,13 +17,12 @@ public class Menu {
     Taro taro;
     NameChemistry nameChemistry;
     ChargeCredit chargeCredit;
-    int pickNum;
 
     public Menu(){}
     public Menu(Member customer){
         this.customer=customer;
     }
-    public int PrintMenu() {
+    public int WelcomeMenu() {
         System.out.println("-------------------------------------------");
         System.out.println("          *.!  Taroro Taro  ..*!           ");
         System.out.println("           * ~.\"  *'~  *.' -.*            ");
@@ -34,16 +33,14 @@ public class Menu {
         System.out.println("*'~  4. 나가기");
 
 
-        return this.PickNum();
+        return this.PickNum(1,4);
     }
     public void GoTo() throws FileNotFoundException, InterruptedException {
         while(true) {
-            switch (this.PrintMenu()) {
+            switch (this.WelcomeMenu()) {
                 case 1:
                     taro = new Taro(customer);
-                    while (taro.WelcomeTaro() != 4) {
-                        taro.GoTo();
-                    }
+                    taro.GoTo();
                     break;
                 case 2:
                     this.GoNameChemistry();
@@ -52,7 +49,6 @@ public class Menu {
                     this.GoChargeCredit();
                     break;
                 case 4:
-                    System.out.println("안녕히 가세요!");
                     return;
                 default:
                     break;
@@ -83,12 +79,13 @@ public class Menu {
         }
     }
 
-    public int PickNum() {
+    //from~to까지 숫자를 입력 받아 리턴
+    public int PickNum(int from, int to) {
         while (true) {
             System.out.print(">>  ");
             try {
                 int num = sc.nextInt();
-                if (num >= 1 && num <= 4) {
+                if (num >= from && num <= to) {
                     //this.pickNum = num;
                     return num;
                 } else {

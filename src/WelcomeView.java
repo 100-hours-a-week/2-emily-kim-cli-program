@@ -11,7 +11,6 @@ public class WelcomeView {
         try {
             music = new Music();
             music.start();
-            //music.join();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

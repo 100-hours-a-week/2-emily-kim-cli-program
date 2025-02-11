@@ -1,19 +1,19 @@
 package Menu.ChargeCredit;
 
 import Member.Member;
+import Menu.Menu;
 
 import java.util.Scanner;
 
-public class ChargeCredit {
+public class ChargeCredit extends Menu {
     Scanner sc=new Scanner(System.in);
 
     Member customer;
-    int pickNum=0;
     public ChargeCredit(Member customer){
         this.customer=customer;
     }
 
-    public void WelcomeChargeCredit(){
+    public int WelcomeChargeCredit(){
         System.out.println("-------------------------------------------");
         System.out.println("       *.!  회원권 충전페이지 입니다  ..*!        ");
         System.out.println("              (1크레딧 = 1원)                 ");
@@ -22,33 +22,24 @@ public class ChargeCredit {
         System.out.println("*'~  1. 회원권 충전");
         System.out.println("*'~  2. 회원권 금액 조회");
         System.out.println("*'~  3. 나가기");
-        while(pickNum!=3){
-            this.PickNum();
-            this.GoTo();
-        }
 
+        return this.PickNum(1,3);
     }
 
-    public void PickNum(){
-        System.out.print(">>  ");
-        int num=sc.nextInt();
-        if(num<1|| num>3) {
-            System.out.println("   잘못된 번호 입니다. 다시 입력해주세요.");
-            this.PickNum();
-            return;
-        }
-        this.pickNum=num;
-    }
     public void GoTo(){
-        switch(pickNum){
-            case 1:
-                this.Charge();
-                break;
-            case 2:
-                this.ViewBalance();
-                break;
-            default:
-                break;
+        while(true) {
+            switch (this.WelcomeChargeCredit()) {
+                case 1:
+                    this.Charge();
+                    break;
+                case 2:
+                    this.ViewBalance();
+                    break;
+                case 3:
+                    return;
+                default:
+                    break;
+            }
         }
     }
 

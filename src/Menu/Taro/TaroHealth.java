@@ -16,7 +16,8 @@ public class TaroHealth extends Taro{
         System.out.println("-------------------------------------------");
         System.out.println("          * ~.\"  *'~  *.'  -.*            ");
         this.PrepareCard();
-        this.PickCard();
+        System.out.println("    *.! 0에서 21까지 중 숫자를 골라보세요 ..*!    ");
+        this.cardChoose=this.PickNum(0,21);
         this.CalculateResult();
         this.Loading();
         this.PrintHealth();
