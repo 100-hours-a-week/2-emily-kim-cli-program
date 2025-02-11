@@ -36,13 +36,13 @@ public class CardDeck {
     public void setCard(){
         int idx=0;
         while (cardSc.hasNextLine()){
-            String num=cardSc.nextLine();
+            cardSc.nextLine();
             String cardNameKor=cardSc.nextLine();
             String cardNameEng=cardSc.nextLine();
             String cardText=cardSc.nextLine();
             String luckyCharm=cardSc.nextLine();
             this.card[idx]=new Card(idx,cardNameKor,cardNameEng, cardText,luckyCharm);
-            idx = idx+1;
+            idx++;
         }
     }
 }

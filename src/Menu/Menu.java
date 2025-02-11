@@ -1,12 +1,15 @@
 package Menu;
 
 import Menu.ChargeCredit.ChargeCredit;
+import Menu.Music.MusicPlay;
 import Menu.NameChemistry.NameChemistry;
 import Menu.Taro.Taro;
 import Member.Member;
 import Member.NonRegistered;
 
-import java.io.FileNotFoundException;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -17,10 +20,16 @@ public class Menu {
     Taro taro;
     NameChemistry nameChemistry;
     ChargeCredit chargeCredit;
+    MusicPlay musicPlay;
 
-    public Menu(){}
-    public Menu(Member customer){
+    public Menu(){
+    }
+    public Menu(MusicPlay musicPlay){
+        this.musicPlay=musicPlay;
+    }
+    public Menu(Member customer, MusicPlay musicPlay){
         this.customer=customer;
+        this.musicPlay=musicPlay;
     }
     public int WelcomeMenu() {
         System.out.println("-------------------------------------------");
@@ -30,12 +39,13 @@ public class Menu {
         System.out.println("*'~  1. 타로점 보기\t\t\t  2000-4000 크레딧");
         System.out.println("*'~  2. 이름 궁합 보기\t\t\t  3000 크레딧");
         System.out.println("*'~  3. 회원권 충전");
-        System.out.println("*'~  4. 나가기");
+        System.out.println("*'~  4. 배경음악 변경");
+        System.out.println("*'~  5. 나가기");
 
 
-        return this.PickNum(1,4);
+        return this.PickNum(1,5);
     }
-    public void GoTo() throws FileNotFoundException, InterruptedException {
+    public void GoTo() throws IOException, InterruptedException, UnsupportedAudioFileException, LineUnavailableException {
         while(true) {
             switch (this.WelcomeMenu()) {
                 case 1:
@@ -49,6 +59,10 @@ public class Menu {
                     this.GoChargeCredit();
                     break;
                 case 4:
+                    //musicPlay=new MusicPlay();
+                    musicPlay.GoTo();
+                    break;
+                case 5:
                     return;
                 default:
                     break;
@@ -63,7 +77,7 @@ public class Menu {
             nonRegistered.Charge(nameChemistry.getPrice());
         }
         else{
-            while(!customer.UpdateBalance(nameChemistry.getPrice()));
+            while(!customer.isUpdateBalance(nameChemistry.getPrice()));
         }
         nameChemistry.WelcomeNameChemistry();
     }
@@ -75,7 +89,7 @@ public class Menu {
             nonRegistered.ChargingError();
         }
         else{
-            chargeCredit.WelcomeChargeCredit();
+            chargeCredit.GoTo();
         }
     }
 
@@ -86,7 +100,6 @@ public class Menu {
             try {
                 int num = sc.nextInt();
                 if (num >= from && num <= to) {
-                    //this.pickNum = num;
                     return num;
                 } else {
                     System.out.println("   잘못된 번호입니다. 다시 입력해주세요.");
@@ -118,7 +131,7 @@ public class Menu {
         TimeUnit.MILLISECONDS.sleep(1000);
     }
 
-    public Boolean isNonRegistered(){
+    public boolean isNonRegistered(){
         return customer == null;
     }
 }

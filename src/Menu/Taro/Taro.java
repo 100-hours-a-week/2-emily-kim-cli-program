@@ -5,7 +5,6 @@ import Member.Member;
 import Member.NonRegistered;
 
 import java.io.FileNotFoundException;
-import java.util.Scanner;
 
 public class Taro extends Menu {
     Member customer;
@@ -43,7 +42,7 @@ public class Taro extends Menu {
                     if (customer == null) {
                         nonRegistered.Charge(taroToday.price);
                     } else {
-                        while (!customer.UpdateBalance(taroToday.price)) ;
+                        while (!customer.isUpdateBalance(taroToday.price)) ;
                     }
                     taroToday.WelcomeToday();
                     break;
@@ -52,7 +51,7 @@ public class Taro extends Menu {
                     if (customer == null) {
                         nonRegistered.Charge(taroHealth.price);
                     } else {
-                        while (!customer.UpdateBalance(taroHealth.price)) ;
+                        while (!customer.isUpdateBalance(taroHealth.price)) ;
                     }
                     taroHealth.WelcomeHealth();
                     break;
@@ -61,7 +60,7 @@ public class Taro extends Menu {
                     if (customer == null) {
                         nonRegistered.Charge(taroLove.price);
                     } else {
-                        while (!customer.UpdateBalance(taroLove.price)) ;
+                        while (!customer.isUpdateBalance(taroLove.price)) ;
                     }
                     taroLove.WelcomeLove();
                     break;

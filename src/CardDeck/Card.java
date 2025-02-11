@@ -7,8 +7,6 @@ public class Card {
     String cardText;
     String luckyCharm;
 
-    public Card(){}
-
     public Card(int num, String cardNameKor, String cardNameEng, String cardText, String luckyCharm){
         this.num=num;
         this.cardNameKor=cardNameKor;
@@ -37,7 +35,8 @@ public class Card {
         return luckyCharm;
     }
 
-    public void setLuckyCharm(String luckyCharm) {
-        this.luckyCharm = luckyCharm;
-    }
+    //업데이트 시 사용
+//    public void setLuckyCharm(String luckyCharm) {
+//        this.luckyCharm = luckyCharm;
+//    }
 }

@@ -44,15 +44,18 @@ public class ChargeCredit extends Menu {
     }
 
     public void Charge(){
+        int input;
         System.out.println("   얼마를 충전할까요?");
-        int input=sc.nextInt();
-        while(input<0){
-            System.out.println("   충전 금액은 양수이어야 합니다.");
+        while(true){
             input=sc.nextInt();
+            if(input>0)
+                break;
+            System.out.println("   충전 금액은 양수이어야 합니다.");
         }
-        customer.UpdateBalance(input*(-1));
+        customer.isUpdateBalance(input*(-1));
     }
     public void ViewBalance(){
+        System.out.println("-------------------------------------------");
         System.out.println("   회원권 잔액은 "+customer.getBalance()+"크레딧 입니다.");
     }
 }

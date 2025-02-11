@@ -20,12 +20,12 @@ public class Member {
     public String getName(){
         return this.name;
     }
-    public boolean setName(String name) {
+    public boolean isSetName(String name) {
         this.name = name;
         return true;
     }
 
-    public boolean setEmail(String email) {
+    public boolean isSetEmail(String email) {
         if(!email.contains("@") || !email.contains(".com")){
             return false;
         }
@@ -33,7 +33,7 @@ public class Member {
         return true;
     }
 
-    public boolean setBirthday(int birthdayInt) {
+    public boolean isSetBirthday(int birthdayInt) {
         LocalDate today = LocalDate.now();
         int year = birthdayInt / 10000;
         int month = (birthdayInt / 100) % 100;
@@ -101,7 +101,8 @@ public class Member {
     public void setBalance(int balance) {
         this.balance = balance;
     }
-    public boolean UpdateBalance(int price){
+
+    public boolean isUpdateBalance(int price){
         if(this.balance>=price){
             this.balance -= price;
             System.out.println("-------------------------------------------");

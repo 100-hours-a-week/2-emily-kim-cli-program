@@ -1,20 +1,21 @@
-import Member.Login;
+import Menu.Login;
 import Member.Member;
+import Menu.Music.MusicPlay;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 
 
 public class WelcomeView {
     Login login;
-    Music music;
+    MusicPlay musicPlay;
 
-    public WelcomeView(){
+    public WelcomeView() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         login = new Login();
-        try {
-            music = new Music();
-            music.start();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        musicPlay = new MusicPlay();
     }
+
     public void PrintWelcome(){
         System.out.println("-------------------------------------------");
         System.out.println("* ~.\"  *'~  *.'  -.* * ~.\"  *'~  *.'_ -.*");
@@ -30,8 +31,12 @@ public class WelcomeView {
         System.out.println("-------------------------------------------");
     }
 
-    public Boolean AskMemberInfo() {
-        return login.AskMemberInfo();
+    public MusicPlay getMusicPlay() {
+        return musicPlay;
+    }
+
+    public boolean isAskMemberInfo() {
+        return login.isAskMemberInfo();
     }
     public Member Login(){
         login.AskPersonalInfo();
@@ -39,7 +44,7 @@ public class WelcomeView {
     }
     public void Logout(){
         login.Logout();
-        music.interrupt();
+        musicPlay.MusicStop();
     }
 
 }
