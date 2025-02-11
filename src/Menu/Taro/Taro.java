@@ -27,17 +27,18 @@ public class Taro extends Menu {
         System.out.println("          *.! It's Taro Time..*!           ");
         System.out.println("          * ~.\"  *'~  *.'  -.*            ");
         System.out.println();
-        return this.PickTaro();
-    }
-
-    public int PickTaro(){
         System.out.println("-------------------------------------------");
         System.out.println("       *.! 원하시는 타로를 골라보세요 ..*!        ");
         System.out.println("*'~  1. 오늘의 타로\t\t\t 2000");
         System.out.println("*'~  2. 건강의 타로\t\t\t 3000");
         System.out.println("*'~  3. 사랑의 타로\t\t\t 4000");
         System.out.println("*'~  4. 나가기");
+        return this.PickTaro();
+    }
+
+    public int PickTaro(){
         System.out.print(">> ");
+
         int taroChoose=sc.nextInt();
         if(taroChoose<1 || taroChoose>4){
             System.out.println("   잘못된 타로 번호 입니다. 다시 입력해주세요.");

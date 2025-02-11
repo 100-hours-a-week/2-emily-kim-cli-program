@@ -22,20 +22,19 @@ public class Music extends Thread{
             musicClip.open(musicStream);
             musicClip.loop(Clip.LOOP_CONTINUOUSLY);
             musicClip.start();
-            while(!musicClip.isActive()){
-                System.out.println("\n🎵   🎵");
-                //Thread.sleep(1000000);
-                //Thread.join();
+            while(true){
+                //System.out.println("Music playing.");
+                Thread.sleep(1);
             }
 
-        } catch (LineUnavailableException | IOException e) {
+        } catch (LineUnavailableException | IOException | InterruptedException e) {
             musicClip.stop();
             musicClip.close();
             System.out.println("Music stopped.");
 
-//            throw new RuntimeException(e);
+            //throw new RuntimeException(e);
         }
+        System.out.println("Music thread end.");
 
-//        System.out.println("Music stopped.");
     }
 }

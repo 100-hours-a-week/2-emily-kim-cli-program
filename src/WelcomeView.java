@@ -26,8 +26,8 @@ public class WelcomeView {
                 "  | |  | (_| || |   | (_) || |   | (_) |\n" +
                 "  \\_/   \\__,_||_|    \\___/ |_|    \\___/ \n");
         System.out.println("* ~.\"  *'~  *.'  -.* * ~.\"  *'~  *.'_ -.*");
-        System.out.println("      *.! Welcome to Taroro ..*!       ");
-        System.out.println("        * ~.\"  *'~  *.'  -.*          ");
+        System.out.println("        *.! Welcome to Taroro ..*!         ");
+        System.out.println("          * ~.\"  *'~  *.'  -.*            ");
         System.out.println("-------------------------------------------");
     }
 
