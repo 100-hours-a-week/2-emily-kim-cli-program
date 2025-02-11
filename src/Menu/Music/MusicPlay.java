@@ -9,7 +9,7 @@ import java.io.IOException;
 public class MusicPlay extends Menu {
 
     Music music;
-    public MusicPlay() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+    public MusicPlay() {
         try {
             music = new Music("TaroroMainTheme");
             music.start();
@@ -62,7 +62,7 @@ public class MusicPlay extends Menu {
         }
     }
 
-    public void ChangeMusic(String musicTitle) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+    public void ChangeMusic(String musicTitle) {
         music.interrupt();
 
         try {

@@ -3,7 +3,6 @@ import Member.Member;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Taroro {

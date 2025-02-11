@@ -6,7 +6,6 @@ import java.io.IOException;
 
 public class Music extends Thread{
     File music;
-    String musicTitle;
     AudioInputStream musicStream;
     Clip musicClip;
 
