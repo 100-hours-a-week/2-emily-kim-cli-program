@@ -82,7 +82,7 @@ public class Taro extends Menu {
                 taroLove.WelcomeLove();
                 break;
             case 4:
-                System.out.println("안녕히 가세요!");
+//                System.out.println("   안녕히 가세요!");
                 break;
             default:
                 break;

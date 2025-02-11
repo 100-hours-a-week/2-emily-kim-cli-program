@@ -17,9 +17,10 @@ public class Taroro {
         else{
             menu = new Menu();
         }
-        while(menu.PrintMenu()!=4){
-            menu.GoTo();
-        }
+        menu.GoTo();
+//        while(menu.PrintMenu()!=4){
+//            menu.GoTo();
+//        }
         welcomeView.Logout();
     }
 }

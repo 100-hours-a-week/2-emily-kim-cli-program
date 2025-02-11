@@ -32,29 +32,31 @@ public class Menu {
         System.out.println("*'~  2. 이름 궁합 보기\t\t\t  3000 크레딧");
         System.out.println("*'~  3. 회원권 충전");
         System.out.println("*'~  4. 나가기");
-        this.PickNum();
 
-        return this.pickNum;
+
+        return this.PickNum();
     }
     public void GoTo() throws FileNotFoundException, InterruptedException {
-        switch (this.pickNum){
-            case 1:
-                taro = new Taro(customer);
-                while(taro.WelcomeTaro()!=4){
-                    taro.GoTo();
-                }
-                break;
-            case 2:
-                this.GoNameChemistry();
-                break;
-            case 3:
-                this.GoChargeCredit();
-                break;
-            case 4:
-                System.out.println("안녕히 가세요!");
-                break;
-            default:
-                break;
+        while(true) {
+            switch (this.PrintMenu()) {
+                case 1:
+                    taro = new Taro(customer);
+                    while (taro.WelcomeTaro() != 4) {
+                        taro.GoTo();
+                    }
+                    break;
+                case 2:
+                    this.GoNameChemistry();
+                    break;
+                case 3:
+                    this.GoChargeCredit();
+                    break;
+                case 4:
+                    System.out.println("안녕히 가세요!");
+                    return;
+                default:
+                    break;
+            }
         }
     }
     public void GoNameChemistry() throws InterruptedException {
@@ -81,15 +83,22 @@ public class Menu {
         }
     }
 
-    public void PickNum(){
-        System.out.print(">>  ");
-        int num=sc.nextInt();
-        if(num<1|| num>4) {
-            System.out.println("   잘못된 번호 입니다. 다시 입력해주세요.");
-            this.PickNum();
-            return;
+    public int PickNum() {
+        while (true) {
+            System.out.print(">>  ");
+            try {
+                int num = sc.nextInt();
+                if (num >= 1 && num <= 4) {
+                    //this.pickNum = num;
+                    return num;
+                } else {
+                    System.out.println("   잘못된 번호입니다. 다시 입력해주세요.");
+                }
+            } catch (Exception e) {
+                System.out.println("   숫자를 입력해주세요.");
+                sc.nextLine();
+            }
         }
-        this.pickNum=num;
     }
     public void Loading() throws InterruptedException {
         for(int i=0;i<7;i++){
