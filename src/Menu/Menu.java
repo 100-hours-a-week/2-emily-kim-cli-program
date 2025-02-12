@@ -69,7 +69,7 @@ public class Menu {
     }
     public void GoNameChemistry() throws InterruptedException {
         nameChemistry=new NameChemistry();
-        if(isNonRegistered()){
+        if(customer.getMemberType().equals("nonregistered")){
             customer.Pay(nameChemistry.getPrice());
         }
         else{
@@ -79,7 +79,7 @@ public class Menu {
     }
     public void GoChargeCredit(){
         chargeCredit=new ChargeCredit(customer);
-        if(isNonRegistered()) {
+        if(customer.getMemberType().equals("nonregistered")) {
             customer.ChargingError();
         }
         else{
@@ -123,9 +123,5 @@ public class Menu {
     public void WaitABit() throws InterruptedException {
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(1000);
-    }
-
-    public boolean isNonRegistered(){
-        return customer == null;
     }
 }

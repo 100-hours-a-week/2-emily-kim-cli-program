@@ -35,10 +35,18 @@ public class Login extends Menu {
         return customer.isSetName(name);
     }
     public boolean isAskBirthday(){
+        int birthday;
         System.out.println("   생년월일을 YYYYMMDD 형식으로 말씀해주세요.");
-        System.out.print(">>  ");
-        int birthday=sc.nextInt();
-        return customer.isSetBirthday(birthday);
+        while(true) {
+            System.out.print(">>  ");
+            try {
+                birthday = sc.nextInt();
+                return customer.isSetBirthday(birthday);
+            }catch (Exception e){
+                System.out.println("   숫자를 입력해주세요.");
+                sc.nextLine();
+            }
+        }
     }
     public boolean isAskEmail(){
         System.out.println("   결과를 전송해드릴 수 있게 이메일을 말씀해주세요.");
@@ -56,10 +64,8 @@ public class Login extends Menu {
                 this.isAskVisited();
                 return true;
             case "n":
-//                NonRegistered nonRegistered=new NonRegistered();
                 customer.setMemberType("nonregistered");
                 customer.PrintNotification();
-//                nonRegistered.PrintNotification();
                 return false;
             default:
                 System.out.println("   대답은 y, n로 해주세요. 다시 한 번 대답해주세요.");
@@ -73,16 +79,11 @@ public class Login extends Menu {
             customer.setMemberType("vip");
             customer.setVisited(visited);
             customer.PrintNotification();
-//            Vip vip=new Vip();
-//            vip.PrintNotification();
-//            customer.setBalance(vip.getBalance());
         }
         else{
             customer.setMemberType("newbie");
             customer.setVisited(visited);
             customer.PrintNotification();
-//            Newbie newbie=new Newbie();
-//            newbie.PrintNotification();
         }
     }
 
