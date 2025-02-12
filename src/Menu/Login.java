@@ -1,9 +1,7 @@
 package Menu;
 
 import Member.Member;
-import Member.NonRegistered;
-import Member.Vip;
-import Member.Newbie;
+
 import java.util.Scanner;
 
 public class Login extends Menu {
@@ -58,9 +56,10 @@ public class Login extends Menu {
                 this.isAskVisited();
                 return true;
             case "n":
-                NonRegistered nonRegistered=new NonRegistered();
-                customer.setType("nonregistered");
-               nonRegistered.PrintNotification();
+//                NonRegistered nonRegistered=new NonRegistered();
+                customer.setMemberType("nonregistered");
+                customer.PrintNotification();
+//                nonRegistered.PrintNotification();
                 return false;
             default:
                 System.out.println("   대답은 y, n로 해주세요. 다시 한 번 대답해주세요.");
@@ -71,26 +70,28 @@ public class Login extends Menu {
         System.out.println("   몇 번째 방문이신가요?");
         int visited= this.PickNum(1,Integer.MAX_VALUE);
         if(visited>5){
-            customer.setType("vip");
+            customer.setMemberType("vip");
             customer.setVisited(visited);
-            Vip vip=new Vip();
-            vip.PrintNotification();
-            customer.setBalance(vip.getBalance());
+            customer.PrintNotification();
+//            Vip vip=new Vip();
+//            vip.PrintNotification();
+//            customer.setBalance(vip.getBalance());
         }
         else{
-            customer.setType("newbie");
+            customer.setMemberType("newbie");
             customer.setVisited(visited);
-            Newbie newbie=new Newbie();
-            newbie.PrintNotification();
+            customer.PrintNotification();
+//            Newbie newbie=new Newbie();
+//            newbie.PrintNotification();
         }
     }
 
 
     public void Logout() {
         System.out.println("-------------------------------------------");
-        if(!customer.getType().equals("nonregistered")){
+        if(!customer.getMemberType().equals("nonregistered")){
             System.out.println("   안녕히 가세요 "+customer.getName()+"님.");
-            if(customer.getType().equals("vip")){
+            if(customer.getMemberType().equals("vip")){
                 System.out.println("   다음에 또 뵙겠습니다.");
             }
         }

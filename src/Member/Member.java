@@ -3,6 +3,7 @@ package Member;
 import Menu.ChargeCredit.ChargeCredit;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Member {
     String name;
@@ -11,7 +12,8 @@ public class Member {
     int age;
     int balance;
     int visited;
-    String type;
+    String memberType;
+    Scanner sc=new Scanner(System.in);
 
     //생성자
     public Member(){}
@@ -91,7 +93,6 @@ public class Member {
                 age=age-1;
             }
         }
-
         this.age=age;
     }
 
@@ -113,9 +114,6 @@ public class Member {
             System.out.println("   회원권 금액이 부족합니다. 회원권을 충전하세요");
             ChargeCredit chargeCredit=new ChargeCredit(this);
             chargeCredit.Charge();
-            //회원권 충전 후 축하메세지 출력
-            //print congrats meesage after charging credits
-
             return false;
         }
     }
@@ -124,10 +122,71 @@ public class Member {
         this.visited = visited;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setMemberType(String memberType) {
+        this.memberType = memberType;
     }
-    public String getType() {
-        return this.type;
+    public String getMemberType() {
+        return this.memberType;
+    }
+
+    public void PrintNotification(){
+        System.out.println("-------------------------------------------");
+        switch(this.getMemberType()){
+            case "vip":
+                System.out.println("* ~.\"  *'~  *.'  -.* * ~.\"  *'~  *.'_ -.*");
+                System.out.println("   당신은 VIP 회원입니다!!");
+                System.out.println("   오늘도 방문해 주셔서 감사합니다.");
+                System.out.println("   웰컴백 바우처 2000 크레딧이 제공됩니다.");
+                System.out.println("* ~.\"  *'~  *.'  -.* * ~.\"  *'~  *.'_ -.*");
+                this.setBalance(2000);
+                break;
+            case "newbie":
+                System.out.println("   당신은 뉴비 회원입니다!");
+                break;
+            case "nonregistered":
+                System.out.println("   당신은 임시 회원입니다.");
+                break;
+            default:
+                System.out.println("   당신 누구야....?");
+                break;
+        }
+    }
+
+    //비회원 목록
+    public void ChargingError() {
+        if(getMemberType().equals("nonregistered")) {
+            System.out.println("   임시 회원은 회원권을 충전할 수 없습니다.");
+        }
+    }
+
+    public void Pay(int price){
+        if(getMemberType().equals("nonregistered")) {
+            System.out.println("   가격을 지불하세요.     " + price + "크레딧");
+            System.out.println("   (1원은 1크레딧입니다.)");
+            while(true) {
+                System.out.print(">>  ");
+                try {
+                    int input = sc.nextInt();
+                    if (input < 0) {
+                        System.out.println("   잘못된 입력입니다.");
+                        this.Pay(price);
+                        return;
+                    } else if (input > price) {
+                        System.out.println("   거스름돈을 받으세요.\t" + (input - price) + "원");
+                        return;
+                    } else if (input < price) {
+                        System.out.println("   돈이 더 필요합니다! ");
+                        this.Pay(price - input);
+                        return;
+                    }
+                    else{
+                        return;
+                    }
+                } catch (Exception e) {
+                    System.out.println("   숫자를 입력해주세요.");
+                    sc.nextLine();
+                }
+            }
+        }
     }
 }

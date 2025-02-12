@@ -14,11 +14,11 @@ public class Taroro {
         welcomeView.PrintWelcome();
         if(welcomeView.isAskMemberInfo()){
             customer = welcomeView.Login();
-            menu = new Menu(customer, welcomeView.getMusicPlay());
         }
         else{
-            menu = new Menu(welcomeView.getMusicPlay());
+            customer=welcomeView.NonLogin();
         }
+        menu = new Menu(customer, welcomeView.getMusicPlay());
         menu.GoTo();
         welcomeView.Logout();
     }

@@ -2,7 +2,6 @@ package Menu.Taro;
 import CardDeck.CardDeck;
 import Menu.Menu;
 import Member.Member;
-import Member.NonRegistered;
 
 import java.io.FileNotFoundException;
 
@@ -34,13 +33,13 @@ public class Taro extends Menu {
     }
 
     public void GoTo() throws FileNotFoundException, InterruptedException {
-        NonRegistered nonRegistered=new NonRegistered();
+        //NonRegistered nonRegistered=new NonRegistered();
         while(true) {
             switch (this.WelcomeTaro()) {
                 case 1:
                     TaroToday taroToday = new TaroToday();
-                    if (customer == null) {
-                        nonRegistered.Charge(taroToday.price);
+                    if (customer.getMemberType().equals("nonregistered")) {
+                        customer.Pay(taroToday.price);
                     } else {
                         while (!customer.isUpdateBalance(taroToday.price)) ;
                     }
@@ -48,8 +47,8 @@ public class Taro extends Menu {
                     break;
                 case 2:
                     TaroHealth taroHealth = new TaroHealth();
-                    if (customer == null) {
-                        nonRegistered.Charge(taroHealth.price);
+                    if (customer.getMemberType().equals("nonregistered")) {
+                        customer.Pay(taroHealth.price);
                     } else {
                         while (!customer.isUpdateBalance(taroHealth.price)) ;
                     }
@@ -57,8 +56,8 @@ public class Taro extends Menu {
                     break;
                 case 3:
                     TaroLove taroLove = new TaroLove();
-                    if (customer == null) {
-                        nonRegistered.Charge(taroLove.price);
+                    if (customer.getMemberType().equals("nonregistered")) {
+                        customer.Pay(taroLove.price);
                     } else {
                         while (!customer.isUpdateBalance(taroLove.price)) ;
                     }

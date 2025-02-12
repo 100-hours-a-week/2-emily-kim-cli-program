@@ -5,7 +5,6 @@ import Menu.Music.MusicPlay;
 import Menu.NameChemistry.NameChemistry;
 import Menu.Taro.Taro;
 import Member.Member;
-import Member.NonRegistered;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -24,9 +23,9 @@ public class Menu {
 
     public Menu(){
     }
-    public Menu(MusicPlay musicPlay){
-        this.musicPlay=musicPlay;
-    }
+//    //public Menu(MusicPlay musicPlay){
+//        this.musicPlay=musicPlay;
+//    }
     public Menu(Member customer, MusicPlay musicPlay){
         this.customer=customer;
         this.musicPlay=musicPlay;
@@ -59,7 +58,6 @@ public class Menu {
                     this.GoChargeCredit();
                     break;
                 case 4:
-                    //musicPlay=new MusicPlay();
                     musicPlay.GoTo();
                     break;
                 case 5:
@@ -70,11 +68,9 @@ public class Menu {
         }
     }
     public void GoNameChemistry() throws InterruptedException {
-        NonRegistered nonRegistered=new NonRegistered();
-
         nameChemistry=new NameChemistry();
         if(isNonRegistered()){
-            nonRegistered.Charge(nameChemistry.getPrice());
+            customer.Pay(nameChemistry.getPrice());
         }
         else{
             while(!customer.isUpdateBalance(nameChemistry.getPrice()));
@@ -82,11 +78,9 @@ public class Menu {
         nameChemistry.WelcomeNameChemistry();
     }
     public void GoChargeCredit(){
-        NonRegistered nonRegistered=new NonRegistered();
-
         chargeCredit=new ChargeCredit(customer);
         if(isNonRegistered()) {
-            nonRegistered.ChargingError();
+            customer.ChargingError();
         }
         else{
             chargeCredit.GoTo();

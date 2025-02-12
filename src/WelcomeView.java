@@ -42,6 +42,9 @@ public class WelcomeView {
         login.AskPersonalInfo();
         return login.getCustomer();
     }
+    public Member NonLogin(){
+        return login.getCustomer();
+    }
     public void Logout(){
         login.Logout();
         musicPlay.MusicStop();

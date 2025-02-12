@@ -47,10 +47,16 @@ public class ChargeCredit extends Menu {
         int input;
         System.out.println("   얼마를 충전할까요?");
         while(true){
-            input=sc.nextInt();
-            if(input>0)
-                break;
-            System.out.println("   충전 금액은 양수이어야 합니다.");
+            System.out.print(">>  ");
+            try{
+                input=sc.nextInt();
+                if(input>0)
+                    break;
+                System.out.println("   충전 금액은 양수이어야 합니다.");
+            } catch (Exception e) {
+                System.out.println("   숫자를 입력해주세요.");
+                sc.nextLine();
+            }
         }
         customer.isUpdateBalance(input*(-1));
     }
